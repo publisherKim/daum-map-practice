@@ -22,13 +22,13 @@
           label.file-upload_label(for="upload") 프로필 사진
             i.fa.fa-picture-o(aria-hidden="true")
           img(:src="uploadSrc")
-        .form_interest-wrap
-          button.interest_button(
-            @click="changeRoute({name: 'user_edit_interest', params: {prev: 'user_edit'}})"
+        .form_hobby-wrap
+          button.hobby_button(
+            @click="changeRoute({name: 'user_edit_hobby', params: {prev: 'user_edit'}})"
             type="button"
           ) 관심사 설정
             i.fa.fa-cog(aria-hidden='true')
-          ul.interest-list
+          ul.hobby-list
             li
               img(src="" alt="관심사1")
         .form_location-wrap
@@ -40,7 +40,7 @@
           p.location-address 경기도 성남시 분당구 정자동 11-2
         button.form_confirm(@click="confirm" type="submit") 완료
       back-button(:route={name: 'user_info'})
-    router-view.user_interest
+    router-view.user_hobby
 </template>
 
 <script>
@@ -105,7 +105,7 @@
     padding: 3rem
     background: $user-edit-background-color
 
-  .interest-list
+  .hobby-list
     +clearfix
     .list_item
       float: left
@@ -115,7 +115,7 @@
     +sub-page-title
 
   .user-edit_form
-    .interest-list, .location-address
+    .hobby-list, .location-address
       margin-top: 0.5rem
       padding-left: 1.5rem
     p
@@ -149,7 +149,7 @@
       font-weight: bold
 
   .form_file-upload-wrap,
-  .form_interest-wrap,
+  .form_hobby-wrap,
   .form_location-wrap
     margin-top: 1.5rem
     & .fa
@@ -163,7 +163,7 @@
     label
       cursor: pointer
 
-  .interest_button,
+  .hobby_button,
   .location_button,
   .file-upload_label
     color: $user-edit-color
@@ -176,7 +176,7 @@
     margin: 2rem auto
     +action-button(5rem, 3rem)
 
-  .user-info_interest-wrap
+  .user-info_hobby-wrap
     .title
       border: none
 </style>

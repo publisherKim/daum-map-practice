@@ -2,7 +2,7 @@
 import User from '@/components/user/User';
 import UserLogin from '@/components/user/Login';
 import UserJoin from '@/components/user/Join';
-import UserInterest from '@/components/common/Interest';
+import UserHobby from '@/components/common/Hobby';
 import UserLocation from '@/components/common/Location';
 import UserEdit from '@/components/user/Edit';
 import UserInfo from '@/components/user/Info';
@@ -26,9 +26,9 @@ export default {
       component: UserJoin,
       children: [
         {
-          path: 'interest',
-          name: 'user_join_interest',
-          component: UserInterest,
+          path: 'hobby',
+          name: 'user_join_hobby',
+          component: UserHobby,
         },
         {
           path: 'location',
@@ -43,9 +43,9 @@ export default {
       component: UserEdit,
       children: [
         {
-          path: 'interest',
-          name: 'user_edit_interest',
-          component: UserInterest,
+          path: 'hobby',
+          name: 'user_edit_hobby',
+          component: UserHobby,
         },
         {
           path: 'location',

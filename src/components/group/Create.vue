@@ -16,16 +16,16 @@
         ) 지역선택
           i.fa.fa-map-marker(aria-hidden='true')
         p.location-address {{group.address}}
-      .form_interest-wrap
-        button.interest_button(
-          @click="changeRoute({name: 'group_create_interest', params: {prev: 'group_create'}})"
+      .form_hobby-wrap
+        button.hobby_button(
+          @click="changeRoute({name: 'group_create_hobby', params: {prev: 'group_create'}})"
           type="button"
         ) 관심사 설정
           i.fa.fa-cog(aria-hidden='true')
-        ul.interest-list
+        ul.hobby-list
           li {{group.hobby}}
       button.form_confirm(@click="changeRoute('main')" type="submit") 완료
-    router-view.interest-container
+    router-view.hobby-container
     back-button(:route={name: 'user_info', params})
 </template>
 
@@ -103,7 +103,7 @@
     +text-input(100%, 100px)
 
   .form_file-upload-wrap,
-  .form_interest-wrap,
+  .form_hobby-wrap,
   .form_location-wrap
     margin-top: 1.5rem
     .label_group-img
@@ -116,7 +116,7 @@
     label
       cursor: pointer
   
-  .interest_button,
+  .hobby_button,
   .location_button
     & > .fa
       margin-left: 1rem
@@ -125,11 +125,11 @@
     background: none
     border: 0
   
-  .interest-list, .location-address
+  .hobby-list, .location-address
     margin-top: 0.5rem
     padding-left: 1.5rem
 
-  .interest-container
+  .hobby-container
     position: absolute
     top: 0
     left: 0
@@ -137,7 +137,7 @@
     height: 100vh
     padding: 2rem
     background: #fff
-    .interest_confirm
+    .hobby_confirm
       display: block
       margin: 2rem auto
       +action-button(5rem, 3rem)

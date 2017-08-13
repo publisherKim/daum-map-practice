@@ -1,18 +1,18 @@
 <template lang="pug">
-  .interest-container
-    h2.interest_title 관심사 필터
-    filter-header.interest-wrap
-    .interest_content-wrap
-      interest.interest-filter-wrap
+  .hobby-container
+    h2.hobby_title 관심사 필터
+    filter-header.hobby-wrap
+    .hobby_content-wrap
+      hobby.hobby-filter-wrap
 </template>
 
 <script>
-import Interest from '@/components/common/Interest';
+import Hobby from '@/components/common/Hobby';
 import FilterHeader from '@/components/filter/Header';
 
 export default {
   components: {
-    Interest,
+    Hobby,
     FilterHeader
   },
   data() {
@@ -26,17 +26,17 @@ export default {
 <style lang="sass" scoped>
   @import "~chming"
 
-  .interest-container
+  .hobby-container
     width: 100%
     z-index: 10
 
-  .interest_title
+  .hobby_title
     +a11y-hidden
 
-  .interest_content-wrap
+  .hobby_content-wrap
     background: $filter-panel-background-color
 
-  .interest-filter-wrap
+  .hobby-filter-wrap
     width: 100%
     +side-space
 </style>

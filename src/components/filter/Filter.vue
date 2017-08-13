@@ -6,7 +6,7 @@
         button(@click="viewFilter('location')" type="button") 서현/야탑 &dtrif;
       .filter-button-wrap
         button.sort-button(@click="viewFilter('sort')" type="button") 거리순 &dtrif;
-        button.interest-button(@click="viewFilter('interest')" type="button") 관심사 &dtrif;
+        button.hobby-button(@click="viewFilter('hobby')" type="button") 관심사 &dtrif;
         button.mylocation-button(@click="viewFilter('mylocation')" type="button" aria-label="내 주변 검색")
           i.fa.fa-street-view(aria-hidden='true')
     .filter(ref="filter" :is="filter")
@@ -14,7 +14,7 @@
 
 <script>
   import SortFilter from '@/components/filter/SortFilter';
-  import InterestFilter from '@/components/filter/InterestFilter';
+  import HobbyFilter from '@/components/filter/HobbyFilter';
   import MylocationFilter from '@/components/filter/MylocationFilter';
   import LocationFilter from '@/components/filter/LocationFilter';
 
@@ -26,7 +26,7 @@
     },
     components: {
       SortFilter,
-      InterestFilter,
+      HobbyFilter,
       MylocationFilter,
       LocationFilter,
     },
@@ -84,7 +84,7 @@
       border: 0
 
   .sort-button,
-  .interest-button
+  .hobby-button
     position: relative
     +align-vertical-middle
     margin-left: 1rem
@@ -99,7 +99,7 @@
     left: 0
 
   .sort-filter_content-wrap button,
-  .interest_list label
+  .hobby_list label
       color: $base-theme-color
 
   +mobile

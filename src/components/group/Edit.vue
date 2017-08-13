@@ -8,10 +8,10 @@
         button.location_button(@click="changeRoute('user_join_location')" type="button") 지역선택
           i.fa.fa-map-marker(aria-hidden='true')
         p.location-address {{group.location}}
-      .form_interest-wrap
-        button.interest_button(@click="changeRoute('user_join_interest')" type="button") 관심사 설정
+      .form_hobby-wrap
+        button.hobby_button(@click="changeRoute('user_join_hobby')" type="button") 관심사 설정
           i.fa.fa-cog(aria-hidden='true')
-        ul.interest-list
+        ul.hobby-list
           li
             img(src="" alt="관심사1")
       button.form_confirm(@click="changeRoute('main')" type="submit") 완료
@@ -28,7 +28,7 @@
           name: '분당 쉐보레 스파크 모임',
           description: '분당구 경차사랑 스파크 모임입니다.',
           location: '경기도 성남시 분당구 정자동 11-2',
-          interest: ['축구', '야구']
+          hobby: ['축구', '야구']
         },
       };
     },
@@ -65,11 +65,11 @@
   .form_description
     +text-input(100%, 100px)
 
-  .form_interest-wrap,
+  .form_hobby-wrap,
   .form_location-wrap
     margin-top: 1.5rem
   
-  .interest_button,
+  .hobby_button,
   .location_button
     & > .fa
       margin-left: 1rem
@@ -78,7 +78,7 @@
     background: none
     border: 0
   
-  .interest-list, .location-address
+  .hobby-list, .location-address
     margin-top: 1rem
     padding-left: 1.5rem
 
