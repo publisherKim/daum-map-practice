@@ -11,12 +11,12 @@
             span.group_name(aria-label="모임명") 분당 쉐보레 스파크 모임
             span.group_description(aria-label="모임 설명") 분당구 경차사랑 스파크 모임입니다.dsa asdasd ad asd asd asd 
             span.group_member(aria-label="모임멤버") 모임멤버 58명
-            interest-icon.group_interest-icon(iconClass="fa-car")
+            hobby-icon.group_hobby-icon(iconClass="fa-car")
 </template>
 
 <script>
 import MainHeader from '@/components/common/Header';
-import InterestIcon from '@/components/common/InterestIcon';
+import HobbyIcon from '@/components/common/HobbyIcon';
 
 export default {
   created() {
@@ -24,7 +24,7 @@ export default {
   },
   components: {
     MainHeader,
-    InterestIcon,
+    HobbyIcon,
   },
   data() {
     return {
@@ -100,7 +100,7 @@ export default {
     .group_description,
     .group_member
       font-size: 1.3rem
-    .group_interest-icon
+    .group_hobby-icon
       position: absolute
       top: 0
       right: 0

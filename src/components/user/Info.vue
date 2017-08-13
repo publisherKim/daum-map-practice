@@ -8,19 +8,19 @@
         span.profile_location(aria-label="주소")
           i.fa.fa-map-marker(aria-hidden="true")
           | {{userInfo.address}}
-        ul.interest_list
+        ul.hobby_list
           li.list-item(aria-label="축구")
-            interest-icon.interest-icon(iconClass="fa-futbol-o")
+            hobby-icon.hobby-icon(iconClass="fa-futbol-o")
           li.list-item(aria-label="음악")
-            interest-icon.interest-icon(iconClass="fa-music")
+            hobby-icon.hobby-icon(iconClass="fa-music")
           li.list-item(aria-label="쇼핑")
-            interest-icon.interest-icon(iconClass="fa-shopping-bag")
+            hobby-icon.hobby-icon(iconClass="fa-shopping-bag")
           li.list-item(aria-label="축구")
-            interest-icon.interest-icon(iconClass="fa-futbol-o")
+            hobby-icon.hobby-icon(iconClass="fa-futbol-o")
           li.list-item(aria-label="음악")
-            interest-icon.interest-icon(iconClass="fa-music")
+            hobby-icon.hobby-icon(iconClass="fa-music")
           li.list-item(aria-label="쇼핑")
-            interest-icon.interest-icon(iconClass="fa-shopping-bag")
+            hobby-icon.hobby-icon(iconClass="fa-shopping-bag")
     ul.user-info_list
       li.list_menu
         a(href @click.prevent="changeRoute({name: 'main'})") 홈
@@ -40,12 +40,12 @@
 <script>
 import BackButton from '@/components/common/BackButton';
 import { mapGetters, mapActions } from 'vuex';
-import InterestIcon from '@/components/common/InterestIcon';
+import HobbyIcon from '@/components/common/HobbyIcon';
 
 export default {
   components: {
     BackButton,
-    InterestIcon,
+    HobbyIcon,
   },
   methods: {
     ...mapActions(['logout']),
@@ -98,7 +98,7 @@ export default {
       position: relative
       +align-vertical-middle
       border-radius: 1000px
-    .interest_list
+    .hobby_list
       +clearfix
       li
         float: left

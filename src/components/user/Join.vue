@@ -64,17 +64,17 @@
             i.fa.fa-picture-o(aria-hidden="true")
           img(v-if="userJoinInfo.profile_img" :src="uploadSrc") 
           
-        .form_interest-wrap
-          button.interest_button(
-            @click="changeRoute({name: 'user_join_interest', params: {prev: 'user_join'}})"
-            @blur="checkEmpty('hobby')" ref="interest" type="button"
+        .form_hobby-wrap
+          button.hobby_button(
+            @click="changeRoute({name: 'user_join_hobby', params: {prev: 'user_join'}})"
+            @blur="checkEmpty('hobby')" ref="hobby" type="button"
           ) 관심사 설정
             i.fa.fa-cog(aria-hidden='true')
-          ul.interest-list(v-if="userJoinInfo.hobby && userJoinInfo.hobby.length !== 0")
+          ul.hobby-list(v-if="userJoinInfo.hobby && userJoinInfo.hobby.length !== 0")
             li.list_item(v-for="hobby in userJoinInfo.hobby")
               img(src="" :alt="hobby")
         message-box(
-          v-if="isEmptyInterest" :classList="['fa-check-circle-o', 'warning']" message="관심사를 선택 해주세요"
+          v-if="isEmptyHobby" :classList="['fa-check-circle-o', 'warning']" message="관심사를 선택 해주세요"
         )
         .form_location-wrap
           button.location_button(
@@ -87,7 +87,7 @@
           v-if="isEmptyAddress" :classList="['fa-check-circle-o', 'warning']" message="지역을 선택해주세요"
         )
         button.form_confirm(type="button" @click="join") 완료
-    router-view.interest-container
+    router-view.hobby-container
     back-button(v-if="!prevRoute" :route={name: 'user_login'})
 </template>
 
@@ -180,9 +180,9 @@
           this.checkEmpty('password');
           refs.password.focus();
           return false;
-        } else if(this.isEmptyInterest || !userJoinInfo.hobby) {
+        } else if(this.isEmptyHobby || !userJoinInfo.hobby) {
           this.checkEmpty('hobby');
-          refs.interest.focus();
+          refs.hobby.focus();
           return false;
         } else if(this.isEmptyAddress || !userJoinInfo.address) {
           this.checkEmpty('address');
@@ -241,7 +241,7 @@
       isEmptyPassword() {
         return this.userJoinInfo.password === '';
       },
-      isEmptyInterest() {
+      isEmptyHobby() {
         let hobby = this.userJoinInfo.hobby;
         return hobby && hobby.length === 0;
       },
@@ -273,14 +273,14 @@
   h3.title
     +sub-page-title
 
-  .interest-list
+  .hobby-list
     +clearfix
     .list_item
       float: left
       margin-right: 1rem
 
   .user-join_form
-    .interest-list, .location-address
+    .hobby-list, .location-address
       margin-top: 0.5rem
       padding-left: 1.5rem
     p
@@ -316,7 +316,7 @@
       line-height: 3rem
 
   .form_file-upload-wrap,
-  .form_interest-wrap,
+  .form_hobby-wrap,
   .form_location-wrap
     margin-top: 1.5rem
     & .fa
@@ -331,7 +331,7 @@
       cursor: pointer
 
   .form_birth,
-  .interest_button,
+  .hobby_button,
   .location_button,
   .file-upload_label
     color: $user-join-color
@@ -344,11 +344,11 @@
     margin: 2rem auto
     +action-button(5rem, 3rem)
 
-  .user-info_interest-wrap
+  .user-info_hobby-wrap
     .title
       border: none
 
-  .interest-container
+  .hobby-container
     position: absolute
     top: 0
     left: 0

@@ -8,7 +8,7 @@ import GroupEditArticle from '@/components/group/EditArticle';
 import GroupWriteArticle from '@/components/group/WriteArticle';
 import GroupAlbum from '@/components/group/Album';
 import GroupCreate from '@/components/group/Create';
-import GroupInterest from '@/components/common/Interest';
+import GroupHobby from '@/components/common/Hobby';
 import GroupLocation from '@/components/common/Location';
 import GroupEdit from '@/components/group/Edit';
 
@@ -60,9 +60,9 @@ export default {
       component: GroupCreate,
       children: [
         {
-          path: 'interest',
-          name: 'group_create_interest',
-          component: GroupInterest,
+          path: 'hobby',
+          name: 'group_create_hobby',
+          component: GroupHobby,
         },
         {
           path: 'location',
@@ -77,9 +77,9 @@ export default {
       component: GroupEdit,
       children: [
         {
-          path: 'interest',
-          name: 'group_edit_interest',
-          component: GroupInterest,
+          path: 'hobby',
+          name: 'group_edit_hobby',
+          component: GroupHobby,
         },
         {
           path: 'location',
